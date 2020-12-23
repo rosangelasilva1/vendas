@@ -30,8 +30,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a <% if params[:controller]=="home"%> class="nav-link active" <%end%>aria-current="page" href="/">Caixa</a>
-            <a <% if params[:controller]=="clientes"%>class="nav-link active" <%end%> href="/clientes">Clientes</a>
+            <a <%if params[:controller]=="home"%> class="nav-link active" <%end%>aria-current="page" href="/">Caixa</a>
+            <a <%if params[:controller]=="clientes"%>class="nav-link active" <%end%> href="/clientes">Clientes</a>
+            <a <%if params[:controller]=="produtos"%>class="nav-link active" <%end%> href="/produtos">Produtos</a>
             
           </div>
         </div>

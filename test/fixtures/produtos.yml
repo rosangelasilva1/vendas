@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  descricao: MyText
+  quantidade: 1
+  vencimento: 2020-12-23 20:36:55
+  preco_compra: 1.5
+  preco_venda: 1.5
+
+two:
+  nome: MyString
+  descricao: MyText
+  quantidade: 1
+  vencimento: 2020-12-23 20:36:55
+  preco_compra: 1.5
+  preco_venda: 1.5
