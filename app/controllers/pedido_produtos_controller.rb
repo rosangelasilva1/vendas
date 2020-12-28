@@ -1,6 +1,6 @@
 class PedidoProdutosController < ApplicationController
   before_action :set_pedido_produto, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_pedido
   # GET /pedido_produtos
   # GET /pedido_produtos.json
   def index
@@ -25,6 +25,7 @@ class PedidoProdutosController < ApplicationController
   # POST /pedido_produtos.json
   def create
     @pedido_produto = PedidoProduto.new(pedido_produto_params)
+    @pedido_produto.pedido = @pedido
 
     respond_to do |format|
       if @pedido_produto.save
@@ -62,7 +63,10 @@ class PedidoProdutosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+  # Use callbacks to share common setup or constraints between actions.
+    def set_pedido
+      @pedido = Pedido.find(params[:pedido_id])
+    end
     def set_pedido_produto
       @pedido_produto = PedidoProduto.find(params[:id])
     end

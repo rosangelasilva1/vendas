@@ -24,6 +24,7 @@
       <%= content_tag_for(:tr, @pedidos) do |pedido| %>
             <td><%= pedido.cliente.nome %></td>
             <td><%= pedido.valor_total %></td>
+            <td><%= link_to 'Ítens', "/pedidos/#{pedido.id}/pedido_produtos" %></td>
             <td><%= link_to 'Mostrar', pedido %></td>
         <td><%= link_to 'Editar', edit_pedido_path(pedido) %></td>
         <td><%= link_to 'Apagar', pedido, method: :delete, data: { confirm: 'Confirma?' } %></td>

@@ -1,7 +1,7 @@
 <div class="page-header">
-  <%= link_to new_pedido_produto_path, class: 'btn btn-primary' do %>
+  <%= link_to new_pedido_pedido_produto_path(@pedido), class: 'btn btn-primary' do %>
     <span class="glyphicon glyphicon-plus"></span>
-    New Pedido produto
+    Novo Ítem Produto
   <% end %>
   <h1>Listar </h1>
 </div>
@@ -24,9 +24,9 @@
             <td><%= pedido_produto.pedido %></td>
             <td><%= pedido_produto.produto %></td>
             <td><%= pedido_produto.valor %></td>
-            <td><%= link_to 'Mostrar', pedido_produto %></td>
-        <td><%= link_to 'Editar', edit_pedido_produto_path(pedido_produto) %></td>
-        <td><%= link_to 'Apagar', pedido_produto, method: :delete, data: { confirm: 'Confirma?' } %></td>
+            <td><%= link_to 'Mostrar', pedido_pedido_produto_path(@pedido,@pedido_produto) %></td>
+        <td><%= link_to 'Editar', edit_pedido_pedido_produto_path(@pedido,@pedido_produto) %></td>
+        <td><%= link_to 'Apagar', pedido_pedido_produto_path(@pedido,@pedido_produto), method: :delete, data: { confirm: 'Confirma?' } %></td>
       <% end %>
     </tbody>
   </table>
