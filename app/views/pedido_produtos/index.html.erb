@@ -14,6 +14,7 @@
             <th>Produto</th>
             <th>Valor</th>
             <th></th>
+            <th></th>
         <th></th>
         <th></th>
       </tr>
@@ -21,12 +22,12 @@
 
     <tbody>
       <%= content_tag_for(:tr, @pedido_produtos) do |pedido_produto| %>
-            <td><%= pedido_produto.pedido %></td>
-            <td><%= pedido_produto.produto %></td>
+            <td><%= pedido_produto.pedido.id %></td>
+            <td><%= pedido_produto.produto.nome %></td>
             <td><%= pedido_produto.valor %></td>
-            <td><%= link_to 'Mostrar', pedido_pedido_produto_path(@pedido,@pedido_produto) %></td>
-        <td><%= link_to 'Editar', edit_pedido_pedido_produto_path(@pedido,@pedido_produto) %></td>
-        <td><%= link_to 'Apagar', pedido_pedido_produto_path(@pedido,@pedido_produto), method: :delete, data: { confirm: 'Confirma?' } %></td>
+            <td><%= link_to 'Mostrar', pedido_pedido_produto_path(@pedido,pedido_produto) %></td>
+        <td><%= link_to 'Editar', edit_pedido_pedido_produto_path(@pedido,pedido_produto) %></td>
+        <td><%= link_to 'Apagar', pedido_pedido_produto_path(@pedido,pedido_produto), method: :delete, data: { confirm: 'Confirma?' } %></td>
       <% end %>
     </tbody>
   </table>
