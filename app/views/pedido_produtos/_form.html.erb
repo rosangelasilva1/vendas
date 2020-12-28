@@ -12,16 +12,13 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :pedido, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-      <%= f.text_field :pedido, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
+   <div class="form-group">
     <%= f.label :produto, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.text_field :produto, class: "form-control" %>
+      <%= f.select :produto_id ,
+          Produto.all.collect{|produto| [produto.nome, produto.id]} , 
+          {:selected => @pedido_produto.produto_id},
+          {:class =>'form-control'}%>
     </div>
   </div>
   <div class="form-group">
