@@ -8,6 +8,19 @@
   <h1>Listar </h1>
 </div>
 
+<div style="text-align:right;margin-right:12px">
+  <form action="/clientes" method="get">
+    <div class = "row" style="display:inline-block" >
+      <div style="float:left">
+        <input type="text" class="form-control" name="busca_nome" value="<%=params[:busca_nome]%>" placeholder="Busca..">
+      </div>  
+      <div style="float:left">
+        <input type="submit" class="btn btn-primary" value="Buscar">
+      </div>
+    </div>
+  </form>
+</div>
+
 <div class="table-responsive">
   <table class="table table-striped table-bordered table-hover">
     <thead>
