@@ -1,8 +1,8 @@
 <br>
 <br>
 
-<h3>Valor total de Receitas: <span style="color:green"><%=@receitas%></span> </h3>
-<h3>Valor total de Despesas: <span style="color:red"><%=@despesas%></span> </h3>
-<h3>Valor Total de Pedidos: <span style="color:green"><%=@pedidos%></span> </h3>
+<h3>Valor total de Receitas: <span style="color:green"><%=number_to_currency(@receitas,:unit =>"R$",precision: 2) %></span> </h3>
+<h3>Valor total de Despesas: <span style="color:red"><%= number_to_currency(@despesas,:unit => "R$",precision: 2)%></span> </h3>
+<h3>Valor Total de Pedidos: <span style="color:green"><%=number_to_currency(@pedidos,:unit =>"R$",precision: 2)%></span> </h3>
 
-<h3>Saldo: <span <%if @saldo>0%>style="color:green"<%else%>style="color:green" <%end%>>  <%=@saldo%></span> </h3>
+<h3>Saldo: <span <%if @saldo>0%>style="color:green"<%else%>style="color:red" <%end%>>  <%=number_to_currency(@saldo,:unit =>"R$",precision:2)%></span> </h3>
