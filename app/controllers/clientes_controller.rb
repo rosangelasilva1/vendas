@@ -5,6 +5,8 @@ class ClientesController < ApplicationController
   # GET /clientes.json
   def index
     @clientes = Cliente.all
+    options = {page:params[:page]|| 1,per_page: 2}
+    @clientes = @clientes.paginate(options)
   end
 
   # GET /clientes/1
